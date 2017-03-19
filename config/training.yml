@@ -1,0 +1,49 @@
+# Donot change the format as this would effect Naive Bayes classification methods.
+# Please feel free to add additional categories using the exact format.
+events_enquiry:
+  
+  event_index_enquiry:
+    - покажи все события рядом
+    - покажи все ивенты рядом
+    - покажи все события
+    - что происходит сегодня в городе
+    - какие события сегодня проходят
+    - куда сходить сегодня вечером?
+
+  tomorrow_event_enquiry:
+    - покажи все события рядом завтра
+    - покажи все ивенты рядом завтра
+    - покажи все события завтра
+    - что происходит в городе завтра
+    - какие события проходят завтра
+    - куда сходить вечером завтра
+
+  more_event_enquiry:
+    - покажи еще события 
+    - хочу больше событий
+    - еще
+    - подробнее
+ 
+# phone_enquiry:
+#   new_phone_enquiry:
+#     - create a new phone phones
+#     - open new phone phones
+#   phone_index_enquiry:
+#     - show all phone phones
+#     - take me to all phone phones page
+#     - go to all phone phones
+#   phone_count_enquiry:
+#     - total phone phones
+#     - count phone phones
+ 
+# television_enquiry:
+#   new_television_enquiry:
+#     - create a new television televisions
+#     - open new television televisions
+#   television_index_enquiry:
+#     - show all television televisions
+#     - take me to all television televisions page
+#     - go to all television televisions
+#   television_count_enquiry:
+#     - total television televisions
+#     - count television televisions

@@ -1,0 +1,7 @@
+.chat-body.clearfix
+  .header
+    %small.text-muted
+      %span.glyphicon.glyphicon-time
+      #{time_ago_in_words(bot_action.updated_at)} ago
+    %strong.pull-right.primary-font Bot
+  %p= return_bot_response

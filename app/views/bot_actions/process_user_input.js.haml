@@ -1,0 +1,4 @@
+- if @return_user_input.present? && @return_bot_response.present? && @bot_action.errors.blank?
+  $(".chat").append("#{escape_javascript("#{render partial: 'bot_actions/user_input', locals: { return_user_input: @return_user_input, bot_action: @bot_action }}").html_safe}");
+  $(".chat").append("#{escape_javascript("#{render partial: 'bot_actions/bot_response', locals: { return_bot_response: @return_bot_response, bot_action: @bot_action }}").html_safe}");
+$(".panel-body").animate({ scrollTop: $(".panel-body")[0].scrollHeight}, 0);

@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title ChatBot
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+  .container
+    - if user_signed_in?
+      .navbar.navbar-text.pull-right
+        Logged in as
+        %strong
+          = current_user.email
+        = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
+        |
+        = link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'
+      .navbar.navbar-text.pull-left
+        = link_to 'Home', root_path, class: 'navbar-link'
+        / |
+        / = link_to 'Phones', phones_path, class: 'navbar-link'
+        / |
+        / = link_to 'Televisions', televisions_path, class: 'navbar-link'
+        / |
+        / = link_to 'Laptops', laptops_path, class: 'navbar-link'
+    - else
+      .navbar.navbar-text.pull-right
+        = link_to "Sign up", new_user_registration_path, class: 'navbar-link'
+        |
+        = link_to "Login", new_user_session_path, class: 'navbar-link'
+  .container
+    .row
+      .col-xs-6
+        = yield
+      .col-xs-0
+        - if current_user.present?
+          = render 'layouts/chat_bot', bot_action: @bot_action, bot_chat: @bot_chat

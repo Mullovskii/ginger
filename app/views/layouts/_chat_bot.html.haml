@@ -1,0 +1,27 @@
+.container
+  .row
+    .col-md-5
+      .panel.panel-primary
+        .panel-body
+          %ul.chat
+            - bot_chat.each do |chat|
+              .chat-body.clearfix
+                .header
+                  %strong.primary-font Me
+                  %small.pull-right.text-muted
+                    %span.glyphicon.glyphicon-time
+                    #{time_ago_in_words(chat.created_at)} ago
+                %p= chat.user_input
+              .chat-body.clearfix
+                .header
+                  %small.text-muted
+                    %span.glyphicon.glyphicon-time
+                    #{time_ago_in_words(chat.updated_at)} ago
+                  %strong.pull-right.primary-font Bot
+                %p= chat.bot_response
+        .panel-footer
+          = form_for bot_action, url: bot_actions_process_user_input_path, remote: true do |f|
+            .input-group
+              = f.text_field :user_input, autocomplete: 'off', class: 'form-control input-sm', id: 'btn-input', placeholder: 'Type your message here...'
+              %span.input-group-btn
+                = f.submit 'send', class: 'btn btn-sm', id: 'btn-chat'

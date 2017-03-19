@@ -1,0 +1,7 @@
+.chat-body.clearfix
+  .header
+    %strong.primary-font Me
+    %small.pull-right.text-muted
+      %span.glyphicon.glyphicon-time
+      #{time_ago_in_words(bot_action.created_at)} ago
+  %p= return_user_input
